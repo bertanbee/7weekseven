@@ -399,12 +399,6 @@ function Body() {
         setTotalSumState(total[0] + total[1] + total[2] + total[3] + total[4] + total[5] + total[6])
     }
 
-    
-
-    function alertdo() {
-        prompt("Whether you really want to reset your data, please type the phrase \"Omelets are good!\", considering upper cases and ponctuation.");
-    }
-
     const Body = styled.div`
     width: 100%;
     
@@ -962,10 +956,103 @@ function Body() {
     let SaturdayTaskAdd;
     let SundayTaskAdd;
 
-    useEffect(() => {
-        console.log("consoleA: " + a);
-        console.log("consoleTotal: " + total);
-    }, [TasksTuesday])
+    function reset() {
+        mondayTasksVar = [];
+        mondayTasksState = []
+        TasksMonday.tasks.map((task) => {
+            mondayTasksVar.push(task);
+            mondayTasksState.push("X");
+        })
+        setTasksMonday({
+            tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
+            state: JSON.parse(JSON.stringify(mondayTasksState))
+        });
+
+        tuesdayTasksVar = [];
+        tuesdayTasksState = []
+        TasksTuesday.tasks.map((task) => {
+            tuesdayTasksVar.push(task);
+            tuesdayTasksState.push("X");
+        })
+        setTasksTuesday({
+            tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(tuesdayTasksState))
+        });
+
+        wednesdayTasksVar = [];
+        wednesdayTasksState = []
+        TasksWednesday.tasks.map((task) => {
+            wednesdayTasksVar.push(task);
+            wednesdayTasksState.push("X");
+        })
+        setTasksWednesday({
+            tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(wednesdayTasksState))
+        });
+
+        thursdayTasksVar = [];
+        thursdayTasksState = []
+        TasksThursday.tasks.map((task) => {
+            thursdayTasksVar.push(task);
+            thursdayTasksState.push("X");
+        })
+        setTasksThursday({
+            tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
+            state: JSON.parse(JSON.stringify(thursdayTasksState))
+        });
+
+        fridayTasksVar = [];
+        fridayTasksState = []
+        TasksFriday.tasks.map((task) => {
+            fridayTasksVar.push(task);
+            fridayTasksState.push("X");
+        })
+        setTasksFriday({
+            tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
+            state: JSON.parse(JSON.stringify(fridayTasksState))
+        });
+
+        saturdayTasksVar = [];
+        saturdayTasksState = []
+        TasksSaturday.tasks.map((task) => {
+            saturdayTasksVar.push(task);
+            saturdayTasksState.push("X");
+        })
+        setTasksSaturday({
+            tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
+            state: JSON.parse(JSON.stringify(saturdayTasksState))
+        });
+
+        sundayTasksVar = [];
+        sundayTasksState = []
+        TasksSunday.tasks.map((task) => {
+            sundayTasksVar.push(task);
+            sundayTasksState.push("X");
+        })
+        setTasksSunday({
+            tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
+            state: JSON.parse(JSON.stringify(sundayTasksState))
+        });
+    }
+    
+    function deleteMonday(a) {
+        console.log(a)
+        mondayTasksVar = [];
+        mondayTasksState = [];
+        TasksMonday.tasks.map((task) => {
+            mondayTasksVar.push(task);
+        });
+        TasksMonday.state.map((task) => {
+            mondayTasksVar.push(task);
+        });
+        mondayTasksVar.splice(a, 1);
+        mondayTasksState.splice(a, 1);
+        setTasksMonday({
+            tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
+            state: JSON.parse(JSON.stringify(mondayTasksState))
+        })
+    }
+
     return (
         <Body>
         <div className="body">
@@ -1462,7 +1549,7 @@ function Body() {
                 <Display number={isNaN(A/TotalState) ? "0%" : Math.floor(A/TotalState*100) + "%"} description="work done today"></Display>
                 <Display number={isNaN(B/TotalSumState) ? "0%" : Math.floor((B/TotalSumState)*100) + "%"} description="done this week"></Display>
             </div>
-            <p onClick={() => alertdo()} className="reset">Reset</p>
+            <p onClick={() => reset()} className="reset">Reset</p>
         </div>
         </div>
         </div>
