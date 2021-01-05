@@ -1,0 +1,15 @@
+.head {
+    background-color: rgba(0, 0, 0, 0.90);
+    height: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+    transition: 0.17s;
+    align-items: center;
+}
+
+.head:hover {
+    background-color: rgba(0, 0, 0, 0.80);
+    transition: 0.25s;
+}

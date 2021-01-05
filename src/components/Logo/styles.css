@@ -1,0 +1,9 @@
+.Logo {
+    opacity: 75%;
+    transition: 0.17s;
+}
+
+.Logo:hover {
+    opacity: 100%;
+    transition: 0.25s;
+}
