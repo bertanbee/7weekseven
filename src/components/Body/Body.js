@@ -16,7 +16,7 @@ function Body() {
         ],
         state : [
             "Y",
-            "N",
+            "Y",
             "X"
         ]
         
@@ -35,7 +35,6 @@ function Body() {
     let [ TasksTuesday, setTasksTuesday ] = useState({
         tasks : ["1"],
         state : ["Y"],
-        
     });
 
     let [ TuesdayNote, setTuesdayNote] = useState({
@@ -336,31 +335,31 @@ function Body() {
         getWeekdayPercentage(weekday)
     }, [])
     useEffect(() => {
-        getWeekdayPercentage(5)
+        getWeekdayPercentage(weekday)
     }, [TasksTuesday])
 
     useEffect(() => {
-        getWeekdayPercentage(6)
+        getWeekdayPercentage(weekday)
     }, [TasksWednesday])
 
     useEffect(() => {
-        getWeekdayPercentage(0)
+        getWeekdayPercentage(weekday)
     }, [TasksThursday])
 
     useEffect(() => {
-        getWeekdayPercentage(1)
+        getWeekdayPercentage(weekday)
     }, [TasksFriday])
 
     useEffect(() => {
-        getWeekdayPercentage(2)
+        getWeekdayPercentage(weekday)
     }, [TasksSaturday])
 
     useEffect(() => {
-        getWeekdayPercentage(3)
+        getWeekdayPercentage(weekday)
     }, [TasksSunday])
 
     useEffect(() => {
-        getWeekdayPercentage(4)
+        getWeekdayPercentage(weekday)
     }, [TasksMonday])
     
     const [ B, setB ] = useState();
@@ -1034,25 +1033,291 @@ function Body() {
             state: JSON.parse(JSON.stringify(sundayTasksState))
         });
     }
-    
-    function deleteMonday(a) {
-        console.log(a)
+
+    var u = 0;
+    function deleteMonday(idvalue) {
         mondayTasksVar = [];
         mondayTasksState = [];
+        u = 0;
         TasksMonday.tasks.map((task) => {
             mondayTasksVar.push(task);
+            mondayTasksState.push(TasksMonday.state[u]);
+            u++;
         });
-        TasksMonday.state.map((task) => {
-            mondayTasksVar.push(task);
-        });
-        mondayTasksVar.splice(a, 1);
-        mondayTasksState.splice(a, 1);
+        mondayTasksVar.splice(idvalue, 1);
+        mondayTasksState.splice(idvalue, 1);
         setTasksMonday({
             tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
             state: JSON.parse(JSON.stringify(mondayTasksState))
         })
     }
 
+    function deleteTuesday(idvalue) {
+        tuesdayTasksVar = [];
+        tuesdayTasksState = [];
+        u = 0;
+        TasksTuesday.tasks.map((task) => {
+            tuesdayTasksVar.push(task);
+            tuesdayTasksState.push(TasksTuesday.state[u]);
+            u++;
+        });
+        tuesdayTasksVar.splice(idvalue, 1);
+        tuesdayTasksState.splice(idvalue, 1);
+        setTasksTuesday({
+            tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(tuesdayTasksState))
+        })
+    }
+
+    function deleteWednesday(idvalue) {
+        wednesdayTasksVar = [];
+        wednesdayTasksState = [];
+        u = 0;
+        TasksWednesday.tasks.map((task) => {
+            wednesdayTasksVar.push(task);
+            wednesdayTasksState.push(TasksWednesday.state[u]);
+            u++;
+        });
+        wednesdayTasksVar.splice(idvalue, 1);
+        wednesdayTasksState.splice(idvalue, 1);
+        setTasksWednesday({
+            tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(wednesdayTasksState))
+        })
+    }
+
+    function deleteThursday(idvalue) {
+        thursdayTasksVar = [];
+        thursdayTasksState = [];
+        u = 0;
+        TasksThursday.tasks.map((task) => {
+            thursdayTasksVar.push(task);
+            thursdayTasksState.push(TasksThursday.state[u]);
+            u++;
+        });
+        thursdayTasksVar.splice(idvalue, 1);
+        thursdayTasksState.splice(idvalue, 1);
+        setTasksThursday({
+            tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
+            state: JSON.parse(JSON.stringify(thursdayTasksState))
+        })
+    }
+
+    function deleteFriday(idvalue) {
+        fridayTasksVar = [];
+        fridayTasksState = [];
+        u = 0;
+        TasksFriday.tasks.map((task) => {
+            fridayTasksVar.push(task);
+            fridayTasksState.push(TasksFriday.state[u]);
+            u++;
+        });
+        fridayTasksVar.splice(idvalue, 1);
+        fridayTasksState.splice(idvalue, 1);
+        setTasksFriday({
+            tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
+            state: JSON.parse(JSON.stringify(fridayTasksState))
+        })
+    }
+
+    function deleteSaturday(idvalue) {
+        saturdayTasksVar = [];
+        saturdayTasksState = [];
+        u = 0;
+        TasksSaturday.tasks.map((task) => {
+            saturdayTasksVar.push(task);
+            saturdayTasksState.push(TasksSaturday.state[u]);
+            u++;
+        });
+        saturdayTasksVar.splice(idvalue, 1);
+        saturdayTasksState.splice(idvalue, 1);
+        setTasksSaturday({
+            tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
+            state: JSON.parse(JSON.stringify(saturdayTasksState))
+        })
+    }
+
+    function deleteSunday(idvalue) {
+        sundayTasksVar = [];
+        sundayTasksState = [];
+        u = 0;
+        TasksSunday.tasks.map((task) => {
+            sundayTasksVar.push(task);
+            sundayTasksState.push(TasksSunday.state[u]);
+            u++;
+        });
+        sundayTasksVar.splice(idvalue, 1);
+        sundayTasksState.splice(idvalue, 1);
+        setTasksSunday({
+            tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
+            state: JSON.parse(JSON.stringify(sundayTasksState))
+        })
+    }
+
+
+
+    var x = 0;
+    function resetx () {
+        x = 0;
+    }
+
+    var j = 0;
+    function resetj (){
+        j = 0;
+    }
+
+    function changeMonday (idinput) {
+        mondayTasksVar = [];
+        mondayTasksState = [];
+        u = 0;
+        TasksMonday.tasks.map((task) => {
+            mondayTasksVar.push(task);
+            mondayTasksState.push(TasksMonday.state[u]);
+            u++;
+        });
+        if (mondayTasksState[idinput] === "X") {
+            mondayTasksState[idinput] = "Y"
+        } else if (mondayTasksState[idinput] === "Y") {
+            mondayTasksState[idinput] = "N"
+        } else if (mondayTasksState[idinput] === "N") {
+            mondayTasksState[idinput] = "X"
+        }
+        setTasksMonday({
+            tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
+            state: JSON.parse(JSON.stringify(mondayTasksState))
+        })
+    }
+    function changeTuesday (idinput) {
+        tuesdayTasksVar = [];
+        tuesdayTasksState = [];
+        u = 0;
+        TasksTuesday.tasks.map((task) => {
+            tuesdayTasksVar.push(task);
+            tuesdayTasksState.push(TasksTuesday.state[u]);
+            u++;
+        });
+        if (tuesdayTasksState[idinput] === "X") {
+            tuesdayTasksState[idinput] = "Y"
+        } else if (tuesdayTasksState[idinput] === "Y") {
+            tuesdayTasksState[idinput] = "N"
+        } else if (tuesdayTasksState[idinput] === "N") {
+            tuesdayTasksState[idinput] = "X"
+        }
+        setTasksTuesday({
+            tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(tuesdayTasksState))
+        })
+    }
+
+    function changeWednesday (idinput) {
+        wednesdayTasksVar = [];
+        wednesdayTasksState = [];
+        u = 0;
+        TasksWednesday.tasks.map((task) => {
+            wednesdayTasksVar.push(task);
+            wednesdayTasksState.push(TasksWednesday.state[u]);
+            u++;
+        });
+        if (wednesdayTasksState[idinput] === "X") {
+            wednesdayTasksState[idinput] = "Y"
+        } else if (wednesdayTasksState[idinput] === "Y") {
+            wednesdayTasksState[idinput] = "N"
+        } else if (wednesdayTasksState[idinput] === "N") {
+            wednesdayTasksState[idinput] = "X"
+        }
+        setTasksWednesday({
+            tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(wednesdayTasksState))
+        })
+    }
+
+    function changeThursday (idinput) {
+        thursdayTasksVar = [];
+        thursdayTasksState = [];
+        u = 0;
+        TasksThursday.tasks.map((task) => {
+            thursdayTasksVar.push(task);
+            thursdayTasksState.push(TasksThursday.state[u]);
+            u++;
+        });
+        if (thursdayTasksState[idinput] === "X") {
+            thursdayTasksState[idinput] = "Y"
+        } else if (thursdayTasksState[idinput] === "Y") {
+            thursdayTasksState[idinput] = "N"
+        } else if (thursdayTasksState[idinput] === "N") {
+            thursdayTasksState[idinput] = "X"
+        }
+        setTasksThursday({
+            tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
+            state: JSON.parse(JSON.stringify(thursdayTasksState))
+        })
+    }
+
+    function changeFriday (idinput) {
+        fridayTasksVar = [];
+        fridayTasksState = [];
+        u = 0;
+        TasksFriday.tasks.map((task) => {
+            fridayTasksVar.push(task);
+            fridayTasksState.push(TasksFriday.state[u]);
+            u++;
+        });
+        if (fridayTasksState[idinput] === "X") {
+            fridayTasksState[idinput] = "Y"
+        } else if (fridayTasksState[idinput] === "Y") {
+            fridayTasksState[idinput] = "N"
+        } else if (fridayTasksState[idinput] === "N") {
+            fridayTasksState[idinput] = "X"
+        }
+        setTasksFriday({
+            tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
+            state: JSON.parse(JSON.stringify(fridayTasksState))
+        })
+    }
+
+    function changeSaturday (idinput) {
+        saturdayTasksVar = [];
+        saturdayTasksState = [];
+        u = 0;
+        TasksSaturday.tasks.map((task) => {
+            saturdayTasksVar.push(task);
+            saturdayTasksState.push(TasksSaturday.state[u]);
+            u++;
+        });
+        if (saturdayTasksState[idinput] === "X") {
+            saturdayTasksState[idinput] = "Y"
+        } else if (saturdayTasksState[idinput] === "Y") {
+            saturdayTasksState[idinput] = "N"
+        } else if (saturdayTasksState[idinput] === "N") {
+            saturdayTasksState[idinput] = "X"
+        }
+        setTasksSaturday({
+            tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
+            state: JSON.parse(JSON.stringify(saturdayTasksState))
+        })
+    }
+
+    function changeSunday (idinput) {
+        sundayTasksVar = [];
+        sundayTasksState = [];
+        u = 0;
+        TasksSunday.tasks.map((task) => {
+            sundayTasksVar.push(task);
+            sundayTasksState.push(TasksSunday.state[u]);
+            u++;
+        });
+        if (sundayTasksState[idinput] === "X") {
+            sundayTasksState[idinput] = "Y"
+        } else if (sundayTasksState[idinput] === "Y") {
+            sundayTasksState[idinput] = "N"
+        } else if (sundayTasksState[idinput] === "N") {
+            sundayTasksState[idinput] = "X"
+        }
+        setTasksSunday({
+            tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
+            state: JSON.parse(JSON.stringify(sundayTasksState))
+        })
+    }
     return (
         <Body>
         <div className="body">
@@ -1074,25 +1339,34 @@ function Body() {
             </div>
                 {
                    TasksMonday.tasks.map(task => (
-                    <div className="task"  key={i}>
+                    <div className="task"  key={"1" + i}>
                         <div className="taskbody">
-                          <div>
-                             <Taskcheckbox className="checkbox" key={"1" + i} status={TasksMonday.state[i]}>
+                          <div id={j} onClick={(event) => {changeMonday(event.currentTarget.id)}}>
+                             <Taskcheckbox className="checkbox" status={TasksMonday.state[i]}>
                                  {
                                      i = i + 1
+                                 }
+                                 {
+                                     j = j + 1
                                  }
                              </Taskcheckbox>
                           </div>
                           <h3 className="tasktitle">
                               {TasksMonday.tasks[k]} 
                               <p hidden="hidden">
-                                  {
+                              {
                                   k = k + 1
-                                  }
+                              }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteMonday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div>
+                         
                         
                     </div>
                 ))
@@ -1102,6 +1376,12 @@ function Body() {
                 }
                 {
                     resetk()
+                }
+                {
+                    resetx()
+                }
+                {
+                    resetj()
                 }
                 <div className="task">
                     <div className="taskbody">
@@ -1141,10 +1421,13 @@ function Body() {
                    TasksTuesday.tasks.map(task => (
                     <div className="task" key={"2" + i}>
                     <div className="taskbody">
-                      <div>
-                         <Taskcheckbox className="checkbox"  status={TasksTuesday.state[i]}>
+                      <div id={j} onClick={(event) => {changeTuesday(event.currentTarget.id)}}>
+                         <Taskcheckbox className="checkbox" status={TasksTuesday.state[i]}>
                               {
-                              i = i + 1
+                                  i = i + 1
+                              }
+                              {
+                                  j = j + 1
                               }
                          </Taskcheckbox>
                       </div>
@@ -1156,7 +1439,12 @@ function Body() {
                                   }
                               </p>
                       </h3>
-                      <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                      <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteTuesday(event.currentTarget.id)}></FaRegTrashAlt>
+                      <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                       </p>
                     </div>
                     
                 </div>
@@ -1167,6 +1455,12 @@ function Body() {
                 }
                 {
                     resetk()
+                }
+                {
+                    resetx()
+                }
+                {
+                    resetj()
                 }
                 <div className="task">
                     <div className="taskbody">
@@ -1207,10 +1501,13 @@ function Body() {
 
                     <div className="task" key={"3" + i}>
                         <div className="taskbody">
-                          <div>
+                          <div id={j} onClick={(event) => {changeWednesday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksWednesday.state[i]}>
                                   {
-                                  i = i + 1
+                                      i = i + 1
+                                  }
+                                  {
+                                      j = j + 1
                                   }
                              </Taskcheckbox>
                           </div>
@@ -1222,7 +1519,12 @@ function Body() {
                                   }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteWednesday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div>
                         
                     </div>
@@ -1234,6 +1536,12 @@ function Body() {
                 {
                     resetk()
                 }  
+                {
+                    resetx()
+                }
+                {
+                    resetj()
+                }
                 <div className="task">
                     <div className="taskbody">
                         <div>
@@ -1275,10 +1583,13 @@ function Body() {
                    TasksThursday.tasks.map(task => (
                     <div className="task" key={"4" + i}> 
                         <div className="taskbody">
-                          <div>
+                          <div id={j} onClick={(event) => {changeThursday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksThursday.state[i]}>
                                   {
-                                  i = i + 1
+                                      i = i + 1
+                                  }
+                                  {
+                                      j = j + 1
                                   }
                              </Taskcheckbox>
                           </div>
@@ -1290,7 +1601,12 @@ function Body() {
                                   }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteThursday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div>
                         
                     </div>
@@ -1301,6 +1617,12 @@ function Body() {
                 }
                 {
                     resetk()
+                }
+                {
+                    resetx()
+                }
+                {
+                    resetj()
                 }
                 <div className="task">
                     <div className="taskbody">
@@ -1343,10 +1665,13 @@ function Body() {
                    TasksFriday.tasks.map(task => (
                     <div className="task" key={"5" + i}>
                         <div className="taskbody">
-                          <div>
+                          <div id={j} onClick={(event) => {changeFriday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksFriday.state[i]}>
                                   {
-                                  i = i + 1
+                                      i = i + 1
+                                  }
+                                  {
+                                      j = j + 1
                                   }
                              </Taskcheckbox>
                           </div>
@@ -1358,7 +1683,12 @@ function Body() {
                                   }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteFriday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div>
                         
                     </div>
@@ -1368,7 +1698,13 @@ function Body() {
                     reseti()
                 }
                 {
-                resetk()
+                    resetk()
+                }
+                {
+                    resetx()
+                }
+                {
+                    resetj()
                 }
                 <div className="task">
                     <div className="taskbody">
@@ -1411,10 +1747,13 @@ function Body() {
                 TasksSaturday.tasks.map(task => (
                     <div className="task" key={"6" + i}>
                         <div className="taskbody">
-                          <div>
+                          <div id={j} onClick={(event) => {changeSaturday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksSaturday.state[i]}>
                                   {
-                                  i = i + 1
+                                      i = i + 1
+                                  }
+                                  {
+                                      j = j + 1
                                   }
                              </Taskcheckbox>
                           </div>
@@ -1426,17 +1765,28 @@ function Body() {
                                   }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteSaturday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div>
                         
                     </div>
                 ))
             }
             {
-            reseti()
+                reseti()
             }
             {
                 resetk()
+            }
+            {
+                resetx()
+            }
+            {
+                resetj()
             }
             <div className="task">
                     <div className="taskbody">
@@ -1479,10 +1829,13 @@ function Body() {
                    TasksSunday.tasks.map(task => (
                     <div className="task" key={"0" + i}> 
                         <div className="taskbody">
-                          <div>
+                          <div id={j} onClick={(event) => {changeSunday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksSunday.state[i]}>
                                   {
-                                  i = i + 1
+                                      i = i + 1
+                                  }
+                                  {
+                                      j = j + 1
                                   }
                              </Taskcheckbox>
                           </div>
@@ -1494,7 +1847,12 @@ function Body() {
                                   }
                               </p>
                           </h3>
-                          <FaRegTrashAlt className="deleteTask"></FaRegTrashAlt>
+                          <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteSunday(event.currentTarget.id)}></FaRegTrashAlt>
+                          <p hidden="hidden">
+                          {
+                              x = x + 1
+                          }
+                          </p>
                         </div> 
                             
                         
@@ -1508,6 +1866,12 @@ function Body() {
                 }
                 {
                     resetk()
+                }
+                {
+                    resetx()
+                }
+                {
+                    resetj()
                 }
                 <div className="task">
                     <div className="taskbody">
@@ -1529,19 +1893,7 @@ function Body() {
             </div>
 
             
-            <div className="selectwarning">
-                <FaInfoCircle className="iconinfo" fill="white" fillOpacity="70%" ></FaInfoCircle>
-                <br></br>
-                <br></br>
-                <b>INFO</b>
-                <br></br>
-                <p>
-                    This is the 11th development version!
-                </p>
-                <p>
-                    Thank you for your support! :D
-                </p>
-            </div>
+            
         </div>
         <div>
         <div className="databox">
