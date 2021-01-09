@@ -517,7 +517,7 @@ function Body() {
     .bodycontentbox:hover .selectwarning {
         opacity: 0%;
         width: 0;
-        
+        display: none;
     }
     
     .selectwarning {
