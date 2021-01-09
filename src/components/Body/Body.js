@@ -1892,8 +1892,19 @@ function Body() {
                 </div>
             </div>
 
-            
-            
+            <div className="selectwarning">
+                <FaInfoCircle className="iconinfo" fill="white" fillOpacity="70%" ></FaInfoCircle>
+                <br></br>
+                <br></br>
+                <b>INFO</b>
+                <br></br>
+                <p>
+                    This is a development version!
+                </p>
+                <p>
+                    Thank you for your support! :D
+                </p>
+            </div>
         </div>
         <div>
         <div className="databox">
