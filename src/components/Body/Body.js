@@ -9,18 +9,16 @@ import styled from 'styled-components';
 function Body() {
     //TasksStates
     let [ TasksMonday, setTasksMonday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "Y",
-            "X"
-        ]
-        
+        tasks: [],
+        state: []
     })
+
+    useEffect(() => {
+        setTasksMonday({
+            tasks: localStorage.getItem('localstoragetasksmonday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetasksmonday')),
+            state: localStorage.getItem('localstoragestatemonday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatemonday'))
+        })
+    }, [])
 
     let [ MondayNote, setMondayNote] = useState({
         daynote: ""
@@ -33,9 +31,16 @@ function Body() {
     
 
     let [ TasksTuesday, setTasksTuesday ] = useState({
-        tasks : ["1"],
-        state : ["Y"],
+        tasks : [],
+        state : [],
     });
+
+    useEffect(() => {
+        setTasksTuesday({
+            tasks: localStorage.getItem('localstoragetaskstuesday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetaskstuesday')),
+            state: localStorage.getItem('localstoragestatetuesday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatetuesday'))
+        })
+    }, [])
 
     let [ TuesdayNote, setTuesdayNote] = useState({
         daynote: ""
@@ -47,18 +52,16 @@ function Body() {
     }, [])
 
     let [ TasksWednesday, setTasksWednesday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "N",
-            "X"
-        ],
-        
+        tasks : [],
+        state : [],
     });
+
+    useEffect(() => {
+        setTasksWednesday({
+            tasks: localStorage.getItem('localstoragetaskswednesday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetaskswednesday')),
+            state: localStorage.getItem('localstoragestatewednesday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatewednesday'))
+        })
+    }, [])
 
     let [ WednesdayNote, setWednesdayNote] = useState({
         daynote: ""
@@ -70,18 +73,15 @@ function Body() {
     }, [])
 
     let [ TasksThursday, setTasksThursday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "N",
-            "X"
-        ],
-        
+        tasks : [],
+        state : [],
     });
+    useEffect(() => {
+        setTasksThursday({
+            tasks: localStorage.getItem('localstoragetasksthursday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetasksthursday')),
+            state: localStorage.getItem('localstoragestatethursday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatethursday'))
+        })
+    }, [])
 
     let [ ThursdayNote, setThursdayNote] = useState({
         daynote: ""
@@ -93,18 +93,15 @@ function Body() {
     }, [])
 
     let [ TasksFriday, setTasksFriday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "N",
-            "X"
-        ],
-        
+        tasks : [],
+        state : [],
     });
+    useEffect(() => {
+        setTasksFriday({
+            tasks: localStorage.getItem('localstoragetasksfriday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetasksfriday')),
+            state: localStorage.getItem('localstoragestatefriday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatefriday'))
+        })
+    }, [])
 
     let [ FridayNote, setFridayNote] = useState({
         daynote: ""
@@ -116,18 +113,16 @@ function Body() {
     }, [])
 
     let [ TasksSaturday, setTasksSaturday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "N",
-            "X"
-        ],
-        
+        tasks : [],
+        state : [],
     });
+
+    useEffect(() => {
+        setTasksSaturday({
+            tasks: localStorage.getItem('localstoragetaskssaturday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetaskssaturday')),
+            state: localStorage.getItem('localstoragestatesaturday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatesaturday'))
+        })
+    }, [])
 
     let [ SaturdayNote, setSaturdayNote] = useState({
         daynote: ""
@@ -139,18 +134,16 @@ function Body() {
     }, [])
 
     let [ TasksSunday, setTasksSunday ] = useState({
-        tasks : [
-            "1",
-            "2",
-            "3"
-        ],
-        state : [
-            "Y",
-            "N",
-            "X"
-        ],
-        
+        tasks : [],
+        state : [],
     });
+
+    useEffect(() => {
+        setTasksSunday({
+            tasks: localStorage.getItem('localstoragetaskssunday') === null ? [] : JSON.parse(localStorage.getItem('localstoragetaskssunday')),
+            state: localStorage.getItem('localstoragestatesunday') === null ? [] : JSON.parse(localStorage.getItem('localstoragestatesunday'))
+        })
+    }, [])
 
     let [ SundayNote, setSundayNote] = useState({
         daynote: ""
@@ -838,6 +831,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
             state: JSON.parse(JSON.stringify(mondayTasksState))
         });
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
     }
 
     let tuesdayTasksVar = [];
@@ -856,6 +851,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
             state: JSON.parse(JSON.stringify(tuesdayTasksState))
         });
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
     }
 
     let wednesdayTasksVar = [];
@@ -874,6 +871,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
             state: JSON.parse(JSON.stringify(wednesdayTasksState))
         });
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
     }
 
     let thursdayTasksVar = [];
@@ -892,6 +891,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
             state: JSON.parse(JSON.stringify(thursdayTasksState))
         });
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
     }
 
     let fridayTasksVar = [];
@@ -910,6 +911,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
             state: JSON.parse(JSON.stringify(fridayTasksState))
         });
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
     }
 
     let saturdayTasksVar = [];
@@ -928,6 +931,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
             state: JSON.parse(JSON.stringify(saturdayTasksState))
         });
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
     }
 
     let sundayTasksVar = [];
@@ -946,6 +951,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
             state: JSON.parse(JSON.stringify(sundayTasksState))
         });
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
 
     let MondayTaskAdd;
@@ -967,6 +974,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
             state: JSON.parse(JSON.stringify(mondayTasksState))
         });
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
 
         tuesdayTasksVar = [];
         tuesdayTasksState = []
@@ -978,6 +987,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
             state: JSON.parse(JSON.stringify(tuesdayTasksState))
         });
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
 
         wednesdayTasksVar = [];
         wednesdayTasksState = []
@@ -990,6 +1001,9 @@ function Body() {
             state: JSON.parse(JSON.stringify(wednesdayTasksState))
         });
 
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
+
         thursdayTasksVar = [];
         thursdayTasksState = []
         TasksThursday.tasks.map((task) => {
@@ -1000,6 +1014,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
             state: JSON.parse(JSON.stringify(thursdayTasksState))
         });
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
 
         fridayTasksVar = [];
         fridayTasksState = []
@@ -1011,6 +1027,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
             state: JSON.parse(JSON.stringify(fridayTasksState))
         });
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
 
         saturdayTasksVar = [];
         saturdayTasksState = []
@@ -1022,6 +1040,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
             state: JSON.parse(JSON.stringify(saturdayTasksState))
         });
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
 
         sundayTasksVar = [];
         sundayTasksState = []
@@ -1033,6 +1053,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
             state: JSON.parse(JSON.stringify(sundayTasksState))
         });
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
 
     var u = 0;
@@ -1051,6 +1073,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
             state: JSON.parse(JSON.stringify(mondayTasksState))
         })
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
     }
 
     function deleteTuesday(idvalue) {
@@ -1068,6 +1092,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
             state: JSON.parse(JSON.stringify(tuesdayTasksState))
         })
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
     }
 
     function deleteWednesday(idvalue) {
@@ -1085,6 +1111,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
             state: JSON.parse(JSON.stringify(wednesdayTasksState))
         })
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
     }
 
     function deleteThursday(idvalue) {
@@ -1102,6 +1130,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
             state: JSON.parse(JSON.stringify(thursdayTasksState))
         })
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
     }
 
     function deleteFriday(idvalue) {
@@ -1119,6 +1149,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
             state: JSON.parse(JSON.stringify(fridayTasksState))
         })
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
     }
 
     function deleteSaturday(idvalue) {
@@ -1136,6 +1168,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
             state: JSON.parse(JSON.stringify(saturdayTasksState))
         })
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
     }
 
     function deleteSunday(idvalue) {
@@ -1153,6 +1187,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
             state: JSON.parse(JSON.stringify(sundayTasksState))
         })
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
 
 
@@ -1187,6 +1223,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
             state: JSON.parse(JSON.stringify(mondayTasksState))
         })
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
     }
     function changeTuesday (idinput) {
         tuesdayTasksVar = [];
@@ -1208,6 +1246,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
             state: JSON.parse(JSON.stringify(tuesdayTasksState))
         })
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
     }
 
     function changeWednesday (idinput) {
@@ -1230,6 +1270,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
             state: JSON.parse(JSON.stringify(wednesdayTasksState))
         })
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
     }
 
     function changeThursday (idinput) {
@@ -1252,6 +1294,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
             state: JSON.parse(JSON.stringify(thursdayTasksState))
         })
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
     }
 
     function changeFriday (idinput) {
@@ -1274,6 +1318,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
             state: JSON.parse(JSON.stringify(fridayTasksState))
         })
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
     }
 
     function changeSaturday (idinput) {
@@ -1296,6 +1342,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
             state: JSON.parse(JSON.stringify(saturdayTasksState))
         })
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
     }
 
     function changeSunday (idinput) {
@@ -1318,6 +1366,8 @@ function Body() {
             tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
             state: JSON.parse(JSON.stringify(sundayTasksState))
         })
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
     return (
         <Body>
