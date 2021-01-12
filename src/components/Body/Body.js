@@ -1381,7 +1381,7 @@ function Body() {
                 </div>
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {MondayNoteVar=event.target.value}} className="DayNoteInput" placeholder={MondayNote.daynote === "" || null || undefined? "Your Monday's warning" : MondayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setMondayNote({daynote: `${event.target.value}`}); localStorage.setItem('mondaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {MondayNoteVar=event.target.value}} className="DayNoteInput" placeholder={MondayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setMondayNote({daynote: `${event.target.value}`}); localStorage.setItem('mondaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setMondayNote({daynote: `${MondayNoteVar}`}); localStorage.setItem('mondaydaynote', MondayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
@@ -1461,7 +1461,7 @@ function Body() {
                 
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {TuesdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={TuesdayNote.daynote === "" || null || undefined? "Your Tuesday's warning" : TuesdayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setTuesdayNote({daynote: `${event.target.value}`}); localStorage.setItem('tuesdaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {TuesdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={TuesdayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setTuesdayNote({daynote: `${event.target.value}`}); localStorage.setItem('tuesdaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setTuesdayNote({daynote: `${TuesdayNoteVar}`}); localStorage.setItem('tuesdaydaynote', TuesdayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
@@ -1541,7 +1541,7 @@ function Body() {
                 
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {WednesdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={WednesdayNote.daynote === "" || null || undefined? "Your Wednesday's warning" : WednesdayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setWednesdayNote({daynote: `${event.target.value}`}); localStorage.setItem('wednesdaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {WednesdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={WednesdayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setWednesdayNote({daynote: `${event.target.value}`}); localStorage.setItem('wednesdaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setWednesdayNote({daynote: `${WednesdayNoteVar}`}); localStorage.setItem('wednesdaydaynote', WednesdayNoteVar)}}>EDIT</div>
                     </div>
                 </div>     
@@ -1623,7 +1623,7 @@ function Body() {
                 
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {ThursdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={ThursdayNote.daynote === "" || null || undefined? "Your Thursday's warning" : ThursdayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setThursdayNote({daynote: `${event.target.value}`}); localStorage.setItem('thursdaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {ThursdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={ThursdayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setThursdayNote({daynote: `${event.target.value}`}); localStorage.setItem('thursdaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setThursdayNote({daynote: `${ThursdayNoteVar}`}); localStorage.setItem('thursdaydaynote', ThursdayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
@@ -1705,7 +1705,7 @@ function Body() {
                 
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {FridayNoteVar=event.target.value}} className="DayNoteInput" placeholder={FridayNote.daynote === "" || null || undefined? "Your Friday's warning" : FridayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setFridayNote({daynote: `${event.target.value}`}); localStorage.setItem('fridaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {FridayNoteVar=event.target.value}} className="DayNoteInput" placeholder={FridayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setFridayNote({daynote: `${event.target.value}`}); localStorage.setItem('fridaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setFridayNote({daynote: `${FridayNoteVar}`}); localStorage.setItem('fridaydaynote', FridayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
@@ -1787,7 +1787,7 @@ function Body() {
                 
                 <div>
                    <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {SaturdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={SaturdayNote.daynote === "" || null || undefined? "Your Saturday's warning" : SaturdayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setSaturdayNote({daynote: `${event.target.value}`}); localStorage.setItem('saturdaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {SaturdayNoteVar=event.target.value}} className="DayNoteInput" placeholder={SaturdayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setSaturdayNote({daynote: `${event.target.value}`}); localStorage.setItem('saturdaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setSaturdayNote({daynote: `${SaturdayNoteVar}`}); localStorage.setItem('saturdaydaynote', SaturdayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
@@ -1869,7 +1869,7 @@ function Body() {
                 
                 <div>
                     <div className="daynote">
-                        <input maxLength="18" onChange={(event) => {SundayNoteVar=event.target.value}} className="DayNoteInput" placeholder={SundayNote.daynote === "" || null || undefined? "Your Sunday's warning" : SundayNote.daynote } type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setSundayNote({daynote: `${event.target.value}`}); localStorage.setItem('sundaydaynote', event.target.value)}}}></input>
+                        <input maxLength="18" onChange={(event) => {SundayNoteVar=event.target.value}} className="DayNoteInput" placeholder={SundayNote.daynote} type="text" onKeyUp={(event) => {if(event.keyCode === 13){ event.preventDefault(); setSundayNote({daynote: `${event.target.value}`}); localStorage.setItem('sundaydaynote', event.target.value)}}}></input>
                         <div className="addButton" onClick={() => {setSundayNote({daynote: `${SundayNoteVar}`}); localStorage.setItem('sundaydaynote', SundayNoteVar)}}>EDIT</div>
                     </div>
                 </div>
