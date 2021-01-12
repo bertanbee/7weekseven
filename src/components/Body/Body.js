@@ -1950,7 +1950,7 @@ function Body() {
                 <b>INFO</b>
                 <br></br>
                 <p>
-                    This is a development version!
+                    Version 1.0.0
                 </p>
                 <p>
                     Thank you for your support! :D
