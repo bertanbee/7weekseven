@@ -309,6 +309,8 @@ function Body() {
     function getWeekdayPercentage(weekday) {
         if (weekday === 0) {
             ThursdayPercentage()
+        } else if (weekday === 7) {
+            ThursdayPercentage()
         } else if (weekday === 1) {
             FridayPercentage()
         } else if (weekday === 2) {
