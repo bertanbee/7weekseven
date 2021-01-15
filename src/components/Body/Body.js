@@ -223,13 +223,14 @@ function Body() {
 
     var a = 0;
     var b = 0;
-    var total = [0, 0 ,0 , 0, 0, 0, 0];
+    var total = [0, 0 ,0 , 0, 0, 0, 0, 0];
 
     function Total() {
         total[3] = TasksSunday.tasks.length;
         total[4] = TasksMonday.tasks.length;
         total[5] = TasksTuesday.tasks.length;
         total[6] = TasksWednesday.tasks.length;
+        total[7] = TasksThursday.tasks.length;
         total[0] = TasksThursday.tasks.length;
         total[1] = TasksFriday.tasks.length;
         total[2] = TasksSaturday.tasks.length;   
