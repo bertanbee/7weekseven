@@ -1,7 +1,6 @@
 .body {
-    background-color: rgba(0, 0, 0, 0.30);
     min-height: 693px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
