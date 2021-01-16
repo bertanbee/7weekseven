@@ -4,6 +4,7 @@ import { FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
 import Taskcheckbox from '../Taskcheckbox/Taskcheckbox';
 import Display from '../Display/Display';
 
+
 import styled from 'styled-components';
 
 function Body() {
@@ -230,8 +231,8 @@ function Body() {
         total[4] = TasksMonday.tasks.length;
         total[5] = TasksTuesday.tasks.length;
         total[6] = TasksWednesday.tasks.length;
-        total[7] = TasksThursday.tasks.length;
         total[0] = TasksThursday.tasks.length;
+        total[7] = TasksThursday.tasks.length;
         total[1] = TasksFriday.tasks.length;
         total[2] = TasksSaturday.tasks.length;   
     }
@@ -308,9 +309,7 @@ function Body() {
     
 
     function getWeekdayPercentage(weekday) {
-        if (weekday === 0) {
-            ThursdayPercentage()
-        } else if (weekday === 7) {
+        if (weekday === 0 || weekday === 7) {
             ThursdayPercentage()
         } else if (weekday === 1) {
             FridayPercentage()
@@ -396,7 +395,8 @@ function Body() {
 
     const Body = styled.div`
     width: 100%;
-    
+    padding-bottom: 60px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 1));
     .bodycontentbox {
         background-color:  rgba(0, 0, 0, 0.60);
         padding: 10px;
@@ -405,7 +405,6 @@ function Body() {
         transition: 0.25s;
         display: flex;
         flex-direction: row;
-        
     }
     
     .bodycontentbox:hover {
@@ -1372,6 +1371,7 @@ function Body() {
         localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
         localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
+    console.log("Weekday: " + weekday);
     return (
         <Body>
         <div className="body">
