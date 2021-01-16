@@ -1,7 +1,7 @@
 import Date from './components/Date/Date';
 import Logo from './components/Logo/Logo';
 import Body from './components/Body/Body';
-import Bottom from './components/Bottom/Bottom';
+
 import Cookies from './components/Cookies/Cookies';
 
 import './globalcss/global.css'
@@ -22,7 +22,6 @@ function App() {
         <Body></Body>
       </div>
     </div>
-    <Bottom></Bottom>
     </>
   );
 }
