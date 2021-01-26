@@ -3,6 +3,7 @@ import Logo from './components/Logo/Logo';
 import Body from './components/Body/Body';
 
 import Cookies from './components/Cookies/Cookies';
+import Loading from './components/Loading/Loading';
 
 import './globalcss/global.css'
 import './globalcss/head.css';
@@ -22,6 +23,7 @@ function App() {
         <Body></Body>
       </div>
     </div>
+    <Loading></Loading>
     </>
   );
 }
