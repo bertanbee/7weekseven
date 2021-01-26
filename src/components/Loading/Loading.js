@@ -39,7 +39,7 @@ function Loading() {
     justify-content: center;
     align-items: center;
     animation: disappear 0.5s forwards;
-    animation-delay: 1.05s;
+    animation-delay: 0.55s;
     animation-iteration-count: none;` : `display: flex;
     position: fixed;
     top: -100000;
@@ -119,7 +119,7 @@ function Loading() {
     border-radius: 100%;
     justify-content: center;
     align-items: center;
-    animation: animation forwards 2s;
+    animation: animation forwards 1s;
     animation-iteration-count: 1;
     border-left: 6px solid rgba(255, 255, 255, 0.50);
     border-bottom: 6px solid rgba(255, 255, 255, 0.75);
