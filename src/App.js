@@ -4,6 +4,7 @@ import Body from './components/Body/Body';
 
 import Cookies from './components/Cookies/Cookies';
 import Loading from './components/Loading/Loading';
+import Bottom from './components/Bottom/Bottom';
 
 import './globalcss/global.css'
 import './globalcss/head.css';
@@ -23,6 +24,7 @@ function App() {
         <Body></Body>
       </div>
     </div>
+    <Bottom></Bottom>
     <Loading></Loading>
     </>
   );
