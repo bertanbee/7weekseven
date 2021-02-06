@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { FaInstagram, FaGithub, FaDiscord, FaLink, FaMapMarkerAlt } from 'react-icons/fa';
-
 import './styles.css';
 import styled from 'styled-components';
 
@@ -180,11 +178,6 @@ function Bottom () {
                         <a className="link" href="https://www.google.com/maps?q=place_id:ChIJ6QQqXrOW9pQR5FcHuImaHCI" target="_blank" rel="noopener noreferrer"><p className="creatorsinfo"><FaMapMarkerAlt></FaMapMarkerAlt> Brazil</p></a>
                     </CreatorInformationBox>
                 </ArtWork>
-                <BottomNavigator>
-                    <Link className="link" to="/home" rel="noopener noreferrer"><strong>Home</strong></Link> 
-                    <Link className="link" to="/tutorials" rel="noopener noreferrer"><strong>Tutorials</strong></Link>   
-                    <Link className="link" to="/cookie-policy" target="_blank" rel="noopener noreferrer"><strong>Cookie Policy</strong></Link> 
-                </BottomNavigator>
             </Navigator>
             <Creatorsinfo>
                 <Photo className="Photo"></Photo>
