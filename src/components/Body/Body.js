@@ -544,7 +544,6 @@ function Body() {
         padding-bottom: 6px;
         transition: 0.25s;
         background-color: rgba(255, 255, 255, 0.07);
-        transition: 0.1s;
     }
     
     .task:hover .tasktitle {
@@ -599,14 +598,14 @@ function Body() {
         display: flex;
         flex-direction: column;
         text-align: center;
-        transition: 0.1s;
+        transition: 0.25s;
     }
     .task:hover .addTask {
         height: 100%;
         opacity: 1;
         width: 100%;
         margin-top: 6px;
-        transition: 0.1s;
+        transition: 0.25s;
     }
     .addTaskForm {
         display: flex;
@@ -614,7 +613,7 @@ function Body() {
         justify-content: center;
         text-align: center;
         padding-bottom: 12px;
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     .DayNoteInput {
         height: 0px;
@@ -635,7 +634,7 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     .addButton {
         width: 0px;
@@ -650,13 +649,13 @@ function Body() {
         border: 1px transparent solid;
         visibility: hidden;
         cursor: pointer;
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     }
     .addButton:hover {
         color: rgba(0, 0, 0, 0.75);
         background-color: rgba(255, 255, 255, 0.93);;
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     .weekday:hover .DayNoteInput {
         height: 15px;
@@ -703,7 +702,6 @@ function Body() {
         border-radius: 0;
         border: 1px transparent solid;
         border-bottom: 1px solid white;
-        trasition: 0.1s;
     }
     .weekday:hover .addTaskButton {
         width: 10%;
@@ -712,7 +710,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-        trasition: 0.1s;
     }
     .addTaskButton {
         width: 0px;
@@ -725,7 +722,7 @@ function Body() {
         height: 0px;
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
-        trasition: 0.1s;
+        transition: 0.25s;
         visibility: hidden;
         cursor: pointer;
     }
@@ -733,7 +730,7 @@ function Body() {
     .addTaskButton:hover {
         color: rgba(0, 0, 0, 0.75);
         background-color: rgba(255, 255, 255, 0.93);
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     .weekday:hover .addTaskInput {
         height: 15px;
@@ -743,32 +740,29 @@ function Body() {
         visibility: visible;
         font-size: 15px;
         pointer-events: auto;
-        trasition: 0.1s;
+        transition: 0.25s;
         
     }
     .addTaskInput:hover {
+        transition: 0.25s;
         pointer-events: auto;
         border: 1px rgba(255, 255, 255, 0.35) solid;
         border-bottom: 1px white solid;
         background-color: rgba(255, 255, 255, 0.30);
-        trasition: 0.1s;
     }
     .addTaskInput::-webkit-input-placeholder {
         color: white;
-        trasition: 0.1s;
+        transition: 0.25s;
     }
     .addTaskInput::-moz-placeholder {
         color: white;
-        trasition: 0.1s;
     }
     .addTaskInput:-ms-input-placeholder {
         color: white;
-        trasition: 0.1s;
     }
     
     .addTaskInput:-moz-placeholder {
         color: white;
-        trasition: 0.1s;
     }
     .addtasktitle {
         padding-bottom: 12px;
