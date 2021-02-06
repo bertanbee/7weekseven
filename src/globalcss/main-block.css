@@ -1,4 +1,4 @@
 .main-block {
-    background-image: url('background.png');
-    background-size: auto;
+    background-image: url('background.jpeg');
+    background-size: cover;
 }
