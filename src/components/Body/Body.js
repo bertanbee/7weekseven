@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaInfoCircle, FaRegTrashAlt } from "react-icons/fa"
+import { FaInfoCircle, FaRegTrashAlt, FaArrowUp, FaArrowDown } from "react-icons/fa"
 
 import Taskcheckbox from '../Taskcheckbox/Taskcheckbox';
 import Display from '../Display/Display';
@@ -234,7 +234,7 @@ function Body() {
         total[0] = TasksThursday.tasks.length;
         total[7] = TasksThursday.tasks.length;
         total[1] = TasksFriday.tasks.length;
-        total[2] = TasksSaturday.tasks.length;   
+        total[2] = TasksSaturday.tasks.length;
     }
 
     const [ A, setA ] = useState();
@@ -509,32 +509,11 @@ function Body() {
         width: 100%;
     }
     
-    .bodycontentbox:hover .selectwarning {
-        transition: 0.25s;
-        opacity: 0%;
-        width: 0;
-        display: none;
-    }
-    
-    .selectwarning {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        transition: 0.25s;
-    }
-    
-    .iconinfo {
-        height: 102px;
-        width: 102px;
-    }
-    
     .taskbody {
         display: flex;
         flex-direction: row;
         align-items: center;
+        width: 100%;
     }
     
     
@@ -553,14 +532,19 @@ function Body() {
     
     
     .task {
+        display: flex;
         transition: 0.25s;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     
     .task:hover {
         padding-top: 6px;
         padding-bottom: 6px;
         transition: 0.25s;
-        background-color: rgba(255, 255, 255, 0.07)
+        background-color: rgba(255, 255, 255, 0.07);
+        transition: 0.1s;
     }
     
     .task:hover .tasktitle {
@@ -615,14 +599,14 @@ function Body() {
         display: flex;
         flex-direction: column;
         text-align: center;
-        transition: 0.25s;
+        transition: 0.1s;
     }
     .task:hover .addTask {
         height: 100%;
         opacity: 1;
         width: 100%;
         margin-top: 6px;
-        transition: 0.25s;
+        transition: 0.1s;
     }
     .addTaskForm {
         display: flex;
@@ -630,7 +614,7 @@ function Body() {
         justify-content: center;
         text-align: center;
         padding-bottom: 12px;
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     .DayNoteInput {
         height: 0px;
@@ -651,7 +635,7 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     .addButton {
         width: 0px;
@@ -666,13 +650,13 @@ function Body() {
         border: 1px transparent solid;
         visibility: hidden;
         cursor: pointer;
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     }
     .addButton:hover {
         color: rgba(0, 0, 0, 0.75);
         background-color: rgba(255, 255, 255, 0.93);;
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     .weekday:hover .DayNoteInput {
         height: 15px;
@@ -719,6 +703,7 @@ function Body() {
         border-radius: 0;
         border: 1px transparent solid;
         border-bottom: 1px solid white;
+        trasition: 0.1s;
     }
     .weekday:hover .addTaskButton {
         width: 10%;
@@ -727,6 +712,7 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
+        trasition: 0.1s;
     }
     .addTaskButton {
         width: 0px;
@@ -739,7 +725,7 @@ function Body() {
         height: 0px;
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
-        transition: 0.25s;
+        trasition: 0.1s;
         visibility: hidden;
         cursor: pointer;
     }
@@ -747,7 +733,7 @@ function Body() {
     .addTaskButton:hover {
         color: rgba(0, 0, 0, 0.75);
         background-color: rgba(255, 255, 255, 0.93);
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     .weekday:hover .addTaskInput {
         height: 15px;
@@ -757,29 +743,32 @@ function Body() {
         visibility: visible;
         font-size: 15px;
         pointer-events: auto;
-        transition: 0.25s;
+        trasition: 0.1s;
         
     }
     .addTaskInput:hover {
-        transition: 0.25s;
         pointer-events: auto;
         border: 1px rgba(255, 255, 255, 0.35) solid;
         border-bottom: 1px white solid;
         background-color: rgba(255, 255, 255, 0.30);
+        trasition: 0.1s;
     }
     .addTaskInput::-webkit-input-placeholder {
         color: white;
-        transition: 0.25s;
+        trasition: 0.1s;
     }
     .addTaskInput::-moz-placeholder {
         color: white;
+        trasition: 0.1s;
     }
     .addTaskInput:-ms-input-placeholder {
         color: white;
+        trasition: 0.1s;
     }
     
     .addTaskInput:-moz-placeholder {
         color: white;
+        trasition: 0.1s;
     }
     .addtasktitle {
         padding-bottom: 12px;
@@ -800,6 +789,34 @@ function Body() {
     .deleteTask:hover {
         cursor: pointer;
         fill: rgba(255, 255, 255, 0.60);
+    }
+    .Arrow {
+        height: 0;
+        width: 0;
+        justify-self: center;
+        text-align: center;
+        fill: rgba(255, 255, 255, 0.45);
+        transition: 0.1s;
+    }
+    .Arrow:hover {
+        cursor: pointer;
+        fill: rgba(255, 255, 255, 0.75);
+        transition: 0.1s;
+    }
+    .task:hover .Arrow {
+        height: 18px;
+        width: 18px;
+        transition: 0.1s;
+    }
+    .Arrowb {
+        height: 0;
+        width: 0;
+        transition: 0.1s;
+    }
+    .task:hover .Arrowb {
+        height: 18px;
+        width: 18px;
+        transition: 0.1s;
     }
     `;
     useEffect(()=> {
@@ -1371,7 +1388,471 @@ function Body() {
         localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
         localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
     }
-    console.log("Weekday: " + weekday);
+
+    let mondayTopIdup;
+    let mondayDownIdup;
+    let mondayTopIdupState;
+    let mondayDownIdupState;
+
+    function upMonday(idvalue) {
+        mondayTasksVar = [];
+        mondayTasksState = [];
+        u = 0;
+        TasksMonday.tasks.map((task) => {
+            mondayTasksVar.push(task);
+            mondayTasksState.push(TasksMonday.state[u]);
+            u = u + 1;
+        });
+
+        mondayTopIdup = mondayTasksVar[idvalue];
+        mondayDownIdup = mondayTasksVar[idvalue - 1];
+        mondayTasksVar[idvalue - 1] = mondayTopIdup;
+        mondayTasksVar[idvalue] = mondayDownIdup;
+
+        mondayTopIdupState = mondayTasksState[idvalue];
+        mondayDownIdupState = mondayTasksState[idvalue - 1];
+        mondayTasksState[idvalue - 1] = mondayTopIdupState;
+        mondayTasksState[idvalue] = mondayDownIdupState;
+        setTasksMonday({
+            tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
+            state: JSON.parse(JSON.stringify(mondayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
+        
+        
+    }
+    function downMonday(idvalue) {
+        mondayTasksVar = [];
+        mondayTasksState = [];
+        u = 0;
+        TasksMonday.tasks.map((task) => {
+            mondayTasksVar.push(task);
+            mondayTasksState.push(TasksMonday.state[u]);
+            u = u +1;
+        });
+
+
+        mondayTopIdup = mondayTasksVar[idvalue];
+        mondayDownIdup = mondayTasksVar[idvalue - 1];
+
+        mondayTasksVar[idvalue - 1] = mondayTopIdup;
+        mondayTasksVar[idvalue] = mondayDownIdup;
+
+        mondayTopIdupState = mondayTasksState[idvalue];
+        mondayDownIdupState = mondayTasksState[idvalue - 1];
+
+        mondayTasksState[idvalue - 1] = mondayTopIdupState;
+        mondayTasksState[idvalue] = mondayDownIdupState;
+        setTasksMonday({
+            tasks: JSON.parse(JSON.stringify(mondayTasksVar)),
+            state: JSON.parse(JSON.stringify(mondayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksmonday', JSON.stringify(mondayTasksVar))
+        localStorage.setItem('localstoragestatemonday', JSON.stringify(mondayTasksState))
+        
+    }
+
+    let tuesdayTopIdup;
+    let tuesdayDownIdup;
+    let tuesdayTopIdupState;
+    let tuesdayDownIdupState;
+
+    function upTuesday(idvalue) {
+        tuesdayTasksVar = [];
+        tuesdayTasksState = [];
+        u = 0;
+        TasksTuesday.tasks.map((task) => {
+            tuesdayTasksVar.push(task);
+            tuesdayTasksState.push(TasksTuesday.state[u]);
+            u = u + 1;
+        });
+
+        tuesdayTopIdup = tuesdayTasksVar[idvalue];
+        tuesdayDownIdup = tuesdayTasksVar[idvalue - 1];
+        tuesdayTasksVar[idvalue - 1] = tuesdayTopIdup;
+        tuesdayTasksVar[idvalue] = tuesdayDownIdup;
+
+        tuesdayTopIdupState = tuesdayTasksState[idvalue];
+        tuesdayDownIdupState = tuesdayTasksState[idvalue - 1];
+        tuesdayTasksState[idvalue - 1] = tuesdayTopIdupState;
+        tuesdayTasksState[idvalue] = tuesdayDownIdupState;
+        setTasksTuesday({
+            tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(tuesdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
+        
+        
+    }
+    function downTuesday(idvalue) {
+        tuesdayTasksVar = [];
+        tuesdayTasksState = [];
+        u = 0;
+        TasksTuesday.tasks.map((task) => {
+            tuesdayTasksVar.push(task);
+            tuesdayTasksState.push(TasksTuesday.state[u]);
+            u = u +1;
+        });
+
+
+        tuesdayTopIdup = tuesdayTasksVar[idvalue];
+        tuesdayDownIdup = tuesdayTasksVar[idvalue - 1];
+
+        tuesdayTasksVar[idvalue - 1] = tuesdayTopIdup;
+        tuesdayTasksVar[idvalue] = tuesdayDownIdup;
+
+        tuesdayTopIdupState = tuesdayTasksState[idvalue];
+        tuesdayDownIdupState = tuesdayTasksState[idvalue - 1];
+
+        tuesdayTasksState[idvalue - 1] = tuesdayTopIdupState;
+        tuesdayTasksState[idvalue] = tuesdayDownIdupState;
+        setTasksTuesday({
+            tasks: JSON.parse(JSON.stringify(tuesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(tuesdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskstuesday', JSON.stringify(tuesdayTasksVar))
+        localStorage.setItem('localstoragestatetuesday', JSON.stringify(tuesdayTasksState))
+        
+    }
+
+    let wednesdayTopIdup;
+    let wednesdayDownIdup;
+    let wednesdayTopIdupState;
+    let wednesdayDownIdupState;
+
+    function upWednesday(idvalue) {
+        wednesdayTasksVar = [];
+        wednesdayTasksState = [];
+        u = 0;
+        TasksWednesday.tasks.map((task) => {
+            wednesdayTasksVar.push(task);
+            wednesdayTasksState.push(TasksWednesday.state[u]);
+            u = u + 1;
+        });
+
+        wednesdayTopIdup = wednesdayTasksVar[idvalue];
+        wednesdayDownIdup = wednesdayTasksVar[idvalue - 1];
+        wednesdayTasksVar[idvalue - 1] = wednesdayTopIdup;
+        wednesdayTasksVar[idvalue] = wednesdayDownIdup;
+
+        wednesdayTopIdupState = wednesdayTasksState[idvalue];
+        wednesdayDownIdupState = wednesdayTasksState[idvalue - 1];
+        wednesdayTasksState[idvalue - 1] = wednesdayTopIdupState;
+        wednesdayTasksState[idvalue] = wednesdayDownIdupState;
+        setTasksWednesday({
+            tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(wednesdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
+        
+        
+    }
+    function downWednesday(idvalue) {
+        wednesdayTasksVar = [];
+        wednesdayTasksState = [];
+        u = 0;
+        TasksWednesday.tasks.map((task) => {
+            wednesdayTasksVar.push(task);
+            wednesdayTasksState.push(TasksWednesday.state[u]);
+            u = u +1;
+        });
+
+
+        wednesdayTopIdup = wednesdayTasksVar[idvalue];
+        wednesdayDownIdup = wednesdayTasksVar[idvalue - 1];
+
+        wednesdayTasksVar[idvalue - 1] = wednesdayTopIdup;
+        wednesdayTasksVar[idvalue] = wednesdayDownIdup;
+
+        wednesdayTopIdupState = wednesdayTasksState[idvalue];
+        wednesdayDownIdupState = wednesdayTasksState[idvalue - 1];
+
+        wednesdayTasksState[idvalue - 1] = wednesdayTopIdupState;
+        wednesdayTasksState[idvalue] = wednesdayDownIdupState;
+        setTasksWednesday({
+            tasks: JSON.parse(JSON.stringify(wednesdayTasksVar)),
+            state: JSON.parse(JSON.stringify(wednesdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskswednesday', JSON.stringify(wednesdayTasksVar))
+        localStorage.setItem('localstoragestatewednesday', JSON.stringify(wednesdayTasksState))
+        
+    }
+
+    
+    let thursdayTopIdup;
+    let thursdayDownIdup;
+    let thursdayTopIdupState;
+    let thursdayDownIdupState;
+
+    function upThursday(idvalue) {
+        thursdayTasksVar = [];
+        thursdayTasksState = [];
+        u = 0;
+        TasksThursday.tasks.map((task) => {
+            thursdayTasksVar.push(task);
+            thursdayTasksState.push(TasksThursday.state[u]);
+            u = u + 1;
+        });
+
+        thursdayTopIdup = thursdayTasksVar[idvalue];
+        thursdayDownIdup = thursdayTasksVar[idvalue - 1];
+        thursdayTasksVar[idvalue - 1] = thursdayTopIdup;
+        thursdayTasksVar[idvalue] = thursdayDownIdup;
+
+        thursdayTopIdupState = thursdayTasksState[idvalue];
+        thursdayDownIdupState = thursdayTasksState[idvalue - 1];
+        thursdayTasksState[idvalue - 1] = thursdayTopIdupState;
+        thursdayTasksState[idvalue] = thursdayDownIdupState;
+        setTasksThursday({
+            tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
+            state: JSON.parse(JSON.stringify(thursdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
+        
+        
+    }
+    function downThursday(idvalue) {
+        thursdayTasksVar = [];
+        thursdayTasksState = [];
+        u = 0;
+        TasksThursday.tasks.map((task) => {
+            thursdayTasksVar.push(task);
+            thursdayTasksState.push(TasksThursday.state[u]);
+            u = u +1;
+        });
+
+
+        thursdayTopIdup = thursdayTasksVar[idvalue];
+        thursdayDownIdup = thursdayTasksVar[idvalue - 1];
+
+        thursdayTasksVar[idvalue - 1] = thursdayTopIdup;
+        thursdayTasksVar[idvalue] = thursdayDownIdup;
+
+        thursdayTopIdupState = thursdayTasksState[idvalue];
+        thursdayDownIdupState = thursdayTasksState[idvalue - 1];
+
+        thursdayTasksState[idvalue - 1] = thursdayTopIdupState;
+        thursdayTasksState[idvalue] = thursdayDownIdupState;
+        setTasksThursday({
+            tasks: JSON.parse(JSON.stringify(thursdayTasksVar)),
+            state: JSON.parse(JSON.stringify(thursdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksthursday', JSON.stringify(thursdayTasksVar))
+        localStorage.setItem('localstoragestatethursday', JSON.stringify(thursdayTasksState))
+        
+    }
+
+    let fridayTopIdup;
+    let fridayDownIdup;
+    let fridayTopIdupState;
+    let fridayDownIdupState;
+
+    function upFriday(idvalue) {
+        fridayTasksVar = [];
+        fridayTasksState = [];
+        u = 0;
+        TasksFriday.tasks.map((task) => {
+            fridayTasksVar.push(task);
+            fridayTasksState.push(TasksFriday.state[u]);
+            u = u + 1;
+        });
+
+        fridayTopIdup = fridayTasksVar[idvalue];
+        fridayDownIdup = fridayTasksVar[idvalue - 1];
+        fridayTasksVar[idvalue - 1] = fridayTopIdup;
+        fridayTasksVar[idvalue] = fridayDownIdup;
+
+        fridayTopIdupState = fridayTasksState[idvalue];
+        fridayDownIdupState = fridayTasksState[idvalue - 1];
+        fridayTasksState[idvalue - 1] = fridayTopIdupState;
+        fridayTasksState[idvalue] = fridayDownIdupState;
+        setTasksFriday({
+            tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
+            state: JSON.parse(JSON.stringify(fridayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
+        
+        
+    }
+    function downFriday(idvalue) {
+        fridayTasksVar = [];
+        fridayTasksState = [];
+        u = 0;
+        TasksFriday.tasks.map((task) => {
+            fridayTasksVar.push(task);
+            fridayTasksState.push(TasksFriday.state[u]);
+            u = u +1;
+        });
+
+
+        fridayTopIdup = fridayTasksVar[idvalue];
+        fridayDownIdup = fridayTasksVar[idvalue - 1];
+
+        fridayTasksVar[idvalue - 1] = fridayTopIdup;
+        fridayTasksVar[idvalue] = fridayDownIdup;
+
+        fridayTopIdupState = fridayTasksState[idvalue];
+        fridayDownIdupState = fridayTasksState[idvalue - 1];
+
+        fridayTasksState[idvalue - 1] = fridayTopIdupState;
+        fridayTasksState[idvalue] = fridayDownIdupState;
+        setTasksFriday({
+            tasks: JSON.parse(JSON.stringify(fridayTasksVar)),
+            state: JSON.parse(JSON.stringify(fridayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetasksfriday', JSON.stringify(fridayTasksVar))
+        localStorage.setItem('localstoragestatefriday', JSON.stringify(fridayTasksState))
+        
+    }
+
+    let saturdayTopIdup;
+    let saturdayDownIdup;
+    let saturdayTopIdupState;
+    let saturdayDownIdupState;
+
+    function upSaturday(idvalue) {
+        saturdayTasksVar = [];
+        saturdayTasksState = [];
+        u = 0;
+        TasksSaturday.tasks.map((task) => {
+            saturdayTasksVar.push(task);
+            saturdayTasksState.push(TasksSaturday.state[u]);
+            u = u + 1;
+        });
+
+        saturdayTopIdup = saturdayTasksVar[idvalue];
+        saturdayDownIdup = saturdayTasksVar[idvalue - 1];
+        saturdayTasksVar[idvalue - 1] = saturdayTopIdup;
+        saturdayTasksVar[idvalue] = saturdayDownIdup;
+
+        saturdayTopIdupState = saturdayTasksState[idvalue];
+        saturdayDownIdupState = saturdayTasksState[idvalue - 1];
+        saturdayTasksState[idvalue - 1] = saturdayTopIdupState;
+        saturdayTasksState[idvalue] = saturdayDownIdupState;
+        setTasksSaturday({
+            tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
+            state: JSON.parse(JSON.stringify(saturdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
+        
+        
+    }
+    function downSaturday(idvalue) {
+        saturdayTasksVar = [];
+        saturdayTasksState = [];
+        u = 0;
+        TasksSaturday.tasks.map((task) => {
+            saturdayTasksVar.push(task);
+            saturdayTasksState.push(TasksSaturday.state[u]);
+            u = u +1;
+        });
+
+
+        saturdayTopIdup = saturdayTasksVar[idvalue];
+        saturdayDownIdup = saturdayTasksVar[idvalue - 1];
+
+        saturdayTasksVar[idvalue - 1] = saturdayTopIdup;
+        saturdayTasksVar[idvalue] = saturdayDownIdup;
+
+        saturdayTopIdupState = saturdayTasksState[idvalue];
+        saturdayDownIdupState = saturdayTasksState[idvalue - 1];
+
+        saturdayTasksState[idvalue - 1] = saturdayTopIdupState;
+        saturdayTasksState[idvalue] = saturdayDownIdupState;
+        setTasksSaturday({
+            tasks: JSON.parse(JSON.stringify(saturdayTasksVar)),
+            state: JSON.parse(JSON.stringify(saturdayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskssaturday', JSON.stringify(saturdayTasksVar))
+        localStorage.setItem('localstoragestatesaturday', JSON.stringify(saturdayTasksState))
+        
+    }
+
+    let sundayTopIdup;
+    let sundayDownIdup;
+    let sundayTopIdupState;
+    let sundayDownIdupState;
+
+    function upSunday(idvalue) {
+        sundayTasksVar = [];
+        sundayTasksState = [];
+        u = 0;
+        TasksSunday.tasks.map((task) => {
+            sundayTasksVar.push(task);
+            sundayTasksState.push(TasksSunday.state[u]);
+            u = u + 1;
+        });
+
+        sundayTopIdup = sundayTasksVar[idvalue];
+        sundayDownIdup = sundayTasksVar[idvalue - 1];
+        sundayTasksVar[idvalue - 1] = sundayTopIdup;
+        sundayTasksVar[idvalue] = sundayDownIdup;
+
+        sundayTopIdupState = sundayTasksState[idvalue];
+        sundayDownIdupState = sundayTasksState[idvalue - 1];
+        sundayTasksState[idvalue - 1] = sundayTopIdupState;
+        sundayTasksState[idvalue] = sundayDownIdupState;
+        setTasksSunday({
+            tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
+            state: JSON.parse(JSON.stringify(sundayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
+        
+        
+    }
+    function downSunday(idvalue) {
+        sundayTasksVar = [];
+        sundayTasksState = [];
+        u = 0;
+        TasksSunday.tasks.map((task) => {
+            sundayTasksVar.push(task);
+            sundayTasksState.push(TasksSunday.state[u]);
+            u = u +1;
+        });
+
+
+        sundayTopIdup = sundayTasksVar[idvalue];
+        sundayDownIdup = sundayTasksVar[idvalue - 1];
+
+        sundayTasksVar[idvalue - 1] = sundayTopIdup;
+        sundayTasksVar[idvalue] = sundayDownIdup;
+
+        sundayTopIdupState = sundayTasksState[idvalue];
+        sundayDownIdupState = sundayTasksState[idvalue - 1];
+
+        sundayTasksState[idvalue - 1] = sundayTopIdupState;
+        sundayTasksState[idvalue] = sundayDownIdupState;
+        setTasksSunday({
+            tasks: JSON.parse(JSON.stringify(sundayTasksVar)),
+            state: JSON.parse(JSON.stringify(sundayTasksState))
+        })
+        
+        localStorage.setItem('localstoragetaskssunday', JSON.stringify(sundayTasksVar))
+        localStorage.setItem('localstoragestatesunday', JSON.stringify(sundayTasksState))
+        
+    }
+
+    var setArrowWithLength;
     return (
         <Body>
         <div className="body">
@@ -1394,6 +1875,8 @@ function Body() {
                 {
                    TasksMonday.tasks.map(task => (
                     <div className="task"  key={"1" + i}>
+                        {x === 0 ? <FaArrowUp className="Arrowb" opacity="0"></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upMonday(event.currentTarget.id)}}></FaArrowUp>}
+                        
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeMonday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksMonday.state[i]}>
@@ -1414,14 +1897,19 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteMonday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
+                          
                         </div>
-                         
-                        
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksMonday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downMonday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                     </div>
                 ))
                 }
@@ -1474,6 +1962,7 @@ function Body() {
                {
                    TasksTuesday.tasks.map(task => (
                     <div className="task" key={"2" + i}>
+                    {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upTuesday(event.currentTarget.id)}}></FaArrowUp>}
                     <div className="taskbody">
                       <div id={j} onClick={(event) => {changeTuesday(event.currentTarget.id)}}>
                          <Taskcheckbox className="checkbox" status={TasksTuesday.state[i]}>
@@ -1494,13 +1983,19 @@ function Body() {
                               </p>
                       </h3>
                       <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteTuesday(event.currentTarget.id)}></FaRegTrashAlt>
-                      <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                       </p>
+                      
                     </div>
-                    
+                    <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksTuesday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downTuesday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                 </div>
                 ))
                 }
@@ -1554,6 +2049,7 @@ function Body() {
                    TasksWednesday.tasks.map(task => (
 
                     <div className="task" key={"3" + i}>
+                        {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upWednesday(event.currentTarget.id)}}></FaArrowUp>}
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeWednesday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksWednesday.state[i]}>
@@ -1574,13 +2070,18 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteWednesday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
                         </div>
-                        
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksWednesday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downWednesday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                     </div>
             ))
                 }
@@ -1636,6 +2137,7 @@ function Body() {
             {
                    TasksThursday.tasks.map(task => (
                     <div className="task" key={"4" + i}> 
+                    {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upThursday(event.currentTarget.id)}}></FaArrowUp>}
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeThursday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksThursday.state[i]}>
@@ -1656,13 +2158,18 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteThursday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
                         </div>
-                        
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksThursday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downThursday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                     </div>
                 ))
                 }
@@ -1718,6 +2225,7 @@ function Body() {
                 {
                    TasksFriday.tasks.map(task => (
                     <div className="task" key={"5" + i}>
+                        {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upFriday(event.currentTarget.id)}}></FaArrowUp>}
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeFriday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksFriday.state[i]}>
@@ -1738,13 +2246,18 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteFriday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
                         </div>
-                        
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksFriday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downFriday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                     </div>
                 ))
                 }
@@ -1800,6 +2313,7 @@ function Body() {
             {
                 TasksSaturday.tasks.map(task => (
                     <div className="task" key={"6" + i}>
+                        {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upSaturday(event.currentTarget.id)}}></FaArrowUp>}
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeSaturday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksSaturday.state[i]}>
@@ -1820,13 +2334,18 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteSaturday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
                         </div>
-                        
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksSaturday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downSaturday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                     </div>
                 ))
             }
@@ -1882,6 +2401,7 @@ function Body() {
                 {
                    TasksSunday.tasks.map(task => (
                     <div className="task" key={"0" + i}> 
+                    {x === 0 ? <FaArrowUp className="Arrowb" opacity="0" id={x}></FaArrowUp> : <FaArrowUp className="Arrow" id={x} onClick={(event) => { upSunday(event.currentTarget.id)}}></FaArrowUp>}
                         <div className="taskbody">
                           <div id={j} onClick={(event) => {changeSunday(event.currentTarget.id)}}>
                              <Taskcheckbox className="checkbox" status={TasksSunday.state[i]}>
@@ -1902,13 +2422,18 @@ function Body() {
                               </p>
                           </h3>
                           <FaRegTrashAlt className="deleteTask" id={x} onClick={(event) => deleteSunday(event.currentTarget.id)}></FaRegTrashAlt>
-                          <p hidden="hidden">
-                          {
-                              x = x + 1
-                          }
-                          </p>
                         </div> 
-                            
+                        <p hidden="hidden">
+                        {
+                            setArrowWithLength = TasksSunday.tasks.length - 1
+                        }
+                        </p>
+                        {x === setArrowWithLength ? <FaArrowDown className="Arrowb" opacity="0"> </FaArrowDown> : <FaArrowDown className="Arrow" id={x + 1} onClick={(event) => { downSunday(event.currentTarget.id) }}></FaArrowDown>}
+                        <p hidden="hidden">
+                              {
+                                x = x + 1
+                              }
+                          </p>
                         
                     </div>
                     
@@ -1944,20 +2469,6 @@ function Body() {
                             </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="selectwarning">
-                <FaInfoCircle className="iconinfo" fill="white" fillOpacity="70%" ></FaInfoCircle>
-                <br></br>
-                <br></br>
-                <b>INFO</b>
-                <br></br>
-                <p>
-                    Version 1.0.0
-                </p>
-                <p>
-                    Thank you for your support! :D
-                </p>
             </div>
         </div>
         <div>
