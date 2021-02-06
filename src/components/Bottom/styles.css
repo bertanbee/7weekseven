@@ -1,0 +1,9 @@
+.Photo {
+    background-image: url('./photo.jpg');
+    background-size: contain;
+}
+
+.Flag {
+    background-image: url("flag.png");
+    background-size: contain;
+}
