@@ -190,16 +190,8 @@ function Bottom () {
                 <Flag className="Flag"></Flag>
                 <Socialmedia>
                     <Media>
-                        <FaInstagram className="Icon"></FaInstagram>
-                        <a className="anchor" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                    </Media>
-                    <Media>
                         <FaGithub className="Icon"></FaGithub>
                         <a className="anchor" href="https://github.com/bertanbee" target="_blank" rel="noopener noreferrer">bertanbee</a>
-                    </Media>
-                    <Media>
-                        <FaDiscord className="Icon"></FaDiscord>
-                        <a className="anchor" href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a>
                     </Media>
 
                 </Socialmedia>
