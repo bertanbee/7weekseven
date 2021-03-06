@@ -2797,7 +2797,6 @@ function Body() {
         transition: 0.25s;
         align-self: center;
     }
-    
 
     .weekdayMonday:hover .expandweekdayMonday {
         width: 45px;
@@ -2832,10 +2831,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowMonday {
+    .expandweekdayarrowMonday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowMonday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowMonday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationMonday {
         font-size: ${fontsizeContinuationMonday};
@@ -3251,10 +3256,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowTuesday {
+    .expandweekdayarrowTuesday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowTuesday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowTuesday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationTuesday {
         font-size: ${fontsizeContinuationTuesday};
@@ -3664,10 +3675,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowWednesday {
+    .expandweekdayarrowWednesday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowWednesday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowWednesday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationWednesday {
         font-size: ${fontsizeContinuationWednesday};
@@ -4079,10 +4096,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowThursday {
+    .expandweekdayarrowThursday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowThursday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowThursday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationThursday {
         font-size: ${fontsizeContinuationThursday};
@@ -4493,10 +4516,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowFriday {
+    .expandweekdayarrowFriday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowFriday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowFriday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationFriday {
         font-size: ${fontsizeContinuationFriday};
@@ -4908,10 +4937,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowSaturday {
+    .expandweekdayarrowSaturday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowSaturday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowSaturday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationSaturday {
         font-size: ${fontsizeContinuationSaturday};
@@ -5323,10 +5358,16 @@ function Body() {
         width: 0;
         transition: 0.25s;
     }
-    minimizeweekdayarrowSunday {
+    .expandweekdayarrowSunday:hover {
+        cursor:pointer
+    }
+    .minimizeweekdayarrowSunday {
         height: 0;
         width: 0;
         transition: 0.25s;
+    }
+    .minimizeweekdayarrowSunday:hover {
+        cursor: pointer;
     }
     .weekdaycontinuationSunday {
         font-size: ${fontsizeContinuationSunday};
@@ -6881,8 +6922,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdayMonday" onClick={expandMonday}>
-                    <FaAngleRight className="expandweekdayarrowMonday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowMonday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowMonday" onClick={expandMonday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowMonday" onClick={expandMonday}></FaAngleLeft>
                 </div>
             </div>
             <div className="weekdayTuesday">
@@ -6973,8 +7014,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdayTuesday" onClick={expandTuesday}>
-                    <FaAngleRight className="expandweekdayarrowTuesday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowTuesday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowTuesday" onClick={expandTuesday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowTuesday" onClick={expandTuesday}></FaAngleLeft>
                 </div>
             </div>
 
@@ -7066,8 +7107,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdayWednesday" onClick={expandWednesday}>
-                    <FaAngleRight className="expandweekdayarrowWednesday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowWednesday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowWednesday" onClick={expandWednesday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowWednesday" onClick={expandWednesday}></FaAngleLeft>
                 </div>
             </div>
 
@@ -7161,8 +7202,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdayThursday" onClick={expandThursday}>
-                    <FaAngleRight className="expandweekdayarrowThursday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowThursday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowThursday" onClick={expandThursday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowThursday" onClick={expandThursday}></FaAngleLeft>
                 </div>
             </div>
 
@@ -7256,8 +7297,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdayFriday" onClick={expandFriday}>
-                    <FaAngleRight className="expandweekdayarrowFriday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowFriday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowFriday" onClick={expandFriday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowFriday" onClick={expandFriday}></FaAngleLeft>
                 </div>
             </div>
 
@@ -7349,8 +7390,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdaySaturday" onClick={expandSaturday}>
-                    <FaAngleRight className="expandweekdayarrowSaturday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowSaturday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowSaturday" onClick={expandSaturday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowSaturday" onClick={expandSaturday}></FaAngleLeft>
                 </div>
             </div>
 
@@ -7444,8 +7485,8 @@ function Body() {
                 
                 </div>
                 <div className="expandweekdaySunday" onClick={expandSunday}>
-                    <FaAngleRight className="expandweekdayarrowSunday"></FaAngleRight>
-                    <FaAngleLeft className="minimizeweekdayarrowSunday"></FaAngleLeft>
+                    <FaAngleRight className="expandweekdayarrowSunday" onClick={expandSunday}></FaAngleRight>
+                    <FaAngleLeft className="minimizeweekdayarrowSunday" onClick={expandSunday}></FaAngleLeft>
                 </div>
             </div>
         </div>
