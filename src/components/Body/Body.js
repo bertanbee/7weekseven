@@ -1,4 +1,6 @@
 
+
+
 import React, { useEffect, useState } from 'react';
 import { FaRegTrashAlt, FaArrowUp, FaArrowDown, FaAngleRight, FaAngleLeft } from "react-icons/fa"
 
@@ -437,6 +439,7 @@ function Body() {
     const [ addTaskButtonPaddingMonday, setAddTaskButtonPaddingMonday ] = useState("0px");
     const [ addTaskFontSizeMonday, setAddTaskFontSizeMonday ] = useState("0px");
     const [ addTaskVisibilityMonday, setAddTaskVisibilityMonday ] = useState("hidden");
+
 
     function expandMonday() {
         if (hoverEffectsMonday === false) {
@@ -2684,7 +2687,26 @@ function Body() {
         setAddTaskVisibilitySunday("hidden");
         }
     }
+
     
+    
+    useEffect(() => {
+        if (weekday === 0 || weekday === 7) {
+            expandThursday()
+        } else if (weekday === 1) {
+            expandFriday()
+        } else if (weekday === 2) {
+            expandSaturday()
+        } else if (weekday === 3) {
+            expandSunday()
+        } else if (weekday === 4) {
+            expandMonday()
+        } else if (weekday === 5) {
+            expandTuesday()
+        } else if (weekday === 6) {
+            expandWednesday()
+        } 
+    }, [])
 
     //CSS
 
@@ -2764,8 +2786,6 @@ function Body() {
         padding-bottom: 12px;
     }
     
-
-
     .weekdayMonday {
         width: ${weekdayWidthMonday};
         transition: 0.5s;
@@ -2781,11 +2801,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdayMonday:hover {
         cursor: pointer;
     }
-
     .expandweekdayMonday {
         display: flex;
         flex-direction: column;
@@ -2797,19 +2815,16 @@ function Body() {
         transition: 0.25s;
         align-self: center;
     }
-
     .weekdayMonday:hover .expandweekdayMonday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopMonday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentMonday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthMonday};
@@ -2818,8 +2833,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopMonday {
         display: flex;
         flex-direction: row;
@@ -2852,9 +2865,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialMonday};
     }
-
     
-
     .DayNoteInputMonday {
         height: ${dayNoteInputHeightMonday};
         width: ${dayNoteInputWidthMonday};
@@ -2894,16 +2905,13 @@ function Body() {
         width: ${addButtonWidthMonday};
         height: ${addButtonHeightMonday};
         font-size: ${addButtonFontSizeMonday};
-
         padding: ${addButtonPaddingMonday};
         visibility: ${addButtonVisibilityMonday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -2938,7 +2946,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -2950,9 +2957,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleMonday {
@@ -3016,7 +3021,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -3121,8 +3125,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskMonday:hover .N{
         opacity: 50%;
@@ -3180,16 +3182,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
-
-
-
-
     .weekdayTuesday {
         width: ${weekdayWidthTuesday};
         transition: 0.5s;
@@ -3205,11 +3197,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdayTuesday:hover {
         cursor: pointer;
     }
-
     .expandweekdayTuesday {
         display: flex;
         flex-direction: column;
@@ -3222,19 +3212,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdayTuesday:hover .expandweekdayTuesday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopTuesday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentTuesday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthTuesday};
@@ -3243,8 +3230,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopTuesday {
         display: flex;
         flex-direction: row;
@@ -3277,9 +3262,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialTuesday};
     }
-
     
-
     .DayNoteInputTuesday {
         height: ${dayNoteInputHeightTuesday};
         width: ${dayNoteInputWidthTuesday};
@@ -3319,16 +3302,13 @@ function Body() {
         width: ${addButtonWidthTuesday};
         height: ${addButtonHeightTuesday};
         font-size: ${addButtonFontSizeTuesday};
-
         padding: ${addButtonPaddingTuesday};
         visibility: ${addButtonVisibilityTuesday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -3363,7 +3343,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -3375,9 +3354,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleTuesday {
@@ -3440,7 +3417,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -3545,8 +3521,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskTuesday:hover .N{
         opacity: 50%;
@@ -3604,11 +3578,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
     .weekdayWednesday {
         width: ${weekdayWidthWednesday};
         transition: 0.5s;
@@ -3624,11 +3593,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdayWednesday:hover {
         cursor: pointer;
     }
-
     .expandweekdayWednesday {
         display: flex;
         flex-direction: column;
@@ -3641,19 +3608,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdayWednesday:hover .expandweekdayWednesday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopWednesday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentWednesday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthWednesday};
@@ -3662,8 +3626,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopWednesday {
         display: flex;
         flex-direction: row;
@@ -3696,9 +3658,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialWednesday};
     }
-
     
-
     .DayNoteInputWednesday {
         height: ${dayNoteInputHeightWednesday};
         width: ${dayNoteInputWidthWednesday};
@@ -3738,16 +3698,13 @@ function Body() {
         width: ${addButtonWidthWednesday};
         height: ${addButtonHeightWednesday};
         font-size: ${addButtonFontSizeWednesday};
-
         padding: ${addButtonPaddingWednesday};
         visibility: ${addButtonVisibilityWednesday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -3782,7 +3739,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -3794,9 +3750,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleWednesday {
@@ -3859,7 +3813,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -3964,8 +3917,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskWednesday:hover .N{
         opacity: 50%;
@@ -4023,13 +3974,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
-
     .weekdayThursday {
         width: ${weekdayWidthThursday};
         transition: 0.5s;
@@ -4045,11 +3989,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdayThursday:hover {
         cursor: pointer;
     }
-
     .expandweekdayThursday {
         display: flex;
         flex-direction: column;
@@ -4062,19 +4004,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdayThursday:hover .expandweekdayThursday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopThursday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentThursday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthThursday};
@@ -4083,8 +4022,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopThursday {
         display: flex;
         flex-direction: row;
@@ -4117,9 +4054,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialThursday};
     }
-
     
-
     .DayNoteInputThursday {
         height: ${dayNoteInputHeightThursday};
         width: ${dayNoteInputWidthThursday};
@@ -4159,16 +4094,13 @@ function Body() {
         width: ${addButtonWidthThursday};
         height: ${addButtonHeightThursday};
         font-size: ${addButtonFontSizeThursday};
-
         padding: ${addButtonPaddingThursday};
         visibility: ${addButtonVisibilityThursday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -4203,7 +4135,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -4215,9 +4146,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleThursday {
@@ -4280,7 +4209,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -4385,8 +4313,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskThursday:hover .N{
         opacity: 50%;
@@ -4444,12 +4370,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
     .weekdayFriday {
         width: ${weekdayWidthFriday};
         transition: 0.5s;
@@ -4465,11 +4385,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdayFriday:hover {
         cursor: pointer;
     }
-
     .expandweekdayFriday {
         display: flex;
         flex-direction: column;
@@ -4482,19 +4400,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdayFriday:hover .expandweekdayFriday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopFriday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentFriday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthFriday};
@@ -4503,8 +4418,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopFriday {
         display: flex;
         flex-direction: row;
@@ -4537,9 +4450,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialFriday};
     }
-
     
-
     .DayNoteInputFriday {
         height: ${dayNoteInputHeightFriday};
         width: ${dayNoteInputWidthFriday};
@@ -4579,16 +4490,13 @@ function Body() {
         width: ${addButtonWidthFriday};
         height: ${addButtonHeightFriday};
         font-size: ${addButtonFontSizeFriday};
-
         padding: ${addButtonPaddingFriday};
         visibility: ${addButtonVisibilityFriday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -4623,7 +4531,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -4635,9 +4542,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleFriday {
@@ -4700,7 +4605,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -4805,8 +4709,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskFriday:hover .N{
         opacity: 50%;
@@ -4864,13 +4766,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
-
     .weekdaySaturday {
         width: ${weekdayWidthSaturday};
         transition: 0.5s;
@@ -4886,11 +4781,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdaySaturday:hover {
         cursor: pointer;
     }
-
     .expandweekdaySaturday {
         display: flex;
         flex-direction: column;
@@ -4903,19 +4796,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdaySaturday:hover .expandweekdaySaturday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopSaturday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentSaturday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthSaturday};
@@ -4924,8 +4814,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopSaturday {
         display: flex;
         flex-direction: row;
@@ -4958,9 +4846,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialSaturday};
     }
-
     
-
     .DayNoteInputSaturday {
         height: ${dayNoteInputHeightSaturday};
         width: ${dayNoteInputWidthSaturday};
@@ -5000,16 +4886,13 @@ function Body() {
         width: ${addButtonWidthSaturday};
         height: ${addButtonHeightSaturday};
         font-size: ${addButtonFontSizeSaturday};
-
         padding: ${addButtonPaddingSaturday};
         visibility: ${addButtonVisibilitySaturday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -5044,7 +4927,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -5056,9 +4938,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleSaturday {
@@ -5121,7 +5001,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -5226,8 +5105,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskSaturday:hover .N{
         opacity: 50%;
@@ -5285,13 +5162,6 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
-
     .weekdaySunday {
         width: ${weekdayWidthSunday};
         transition: 0.5s;
@@ -5307,11 +5177,9 @@ function Body() {
         background-color: rgba(0, 0, 0, 0.60);
         transition: 0.25s;
     }
-
     .expandweekdaySunday:hover {
         cursor: pointer;
     }
-
     .expandweekdaySunday {
         display: flex;
         flex-direction: column;
@@ -5324,19 +5192,16 @@ function Body() {
         align-self: center;
     }
     
-
     .weekdaySunday:hover .expandweekdaySunday {
         width: 45px;
         transition: 0.21s;
     }
-
     .weekdaytopSunday {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
-
     .weekdaycontentSunday {
         background-color: rgba(0, 0, 0, 0.30);
         width: ${weekdayContentWidthSunday};
@@ -5345,8 +5210,6 @@ function Body() {
         flex-direction: column;
         transition: 0.5s;
     }
-
-
     .weekdaytopSunday {
         display: flex;
         flex-direction: row;
@@ -5379,9 +5242,7 @@ function Body() {
         transition: 0.25s;
         color: ${colorInitialSunday};
     }
-
     
-
     .DayNoteInputSunday {
         height: ${dayNoteInputHeightSunday};
         width: ${dayNoteInputWidthSunday};
@@ -5421,16 +5282,13 @@ function Body() {
         width: ${addButtonWidthSunday};
         height: ${addButtonHeightSunday};
         font-size: ${addButtonFontSizeSunday};
-
         padding: ${addButtonPaddingSunday};
         visibility: ${addButtonVisibilitySunday};
-
         display: table-cell;
      	text-align: center;
         color: white;
         vertical-align: middle;
         justify-content: center;
-
         
         background-color: rgba(255, 255, 255, 0.30);
         border: 1px transparent solid;
@@ -5465,7 +5323,6 @@ function Body() {
         padding: 0px;
         font-size: 0px;
         visibility: hidden;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -5477,9 +5334,7 @@ function Body() {
         
         cursor: pointer;
     }
-
     
-
     
     
     .tasktitleSunday {
@@ -5542,7 +5397,6 @@ function Body() {
         padding: 6px;
         font-size: 17px;
         visibility: visible;
-
         display: table-cell;
      	text-align: center;
         color: white;
@@ -5647,8 +5501,6 @@ function Body() {
         width: 0px;
     }
     `}
-
-
     
     .taskSunday:hover .N{
         opacity: 50%;
@@ -5706,21 +5558,7 @@ function Body() {
         width: 0;
         transition: 0.1s;
     }
-
-
-
-
-
-
-
-
-
-
-
-
     
-
-
     .databox {
         background-color:  rgba(0, 0, 0, 0.60);
         padding: 10px;
